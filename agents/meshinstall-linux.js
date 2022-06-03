@@ -55,6 +55,7 @@ else
 {
     lang = process.argv.getParameter('lang', lang).toLowerCase();
     lang = lang.split('_').join('-');
+    if(lang.length < 2) lang = 'en'; // created as a workaround due to require('util-language').current returning erronous results.  All language codes I found in java were 2 or more characters
     if (translation[lang] == null)
     {
         if (translation[lang.split('-')[0]] == null)
